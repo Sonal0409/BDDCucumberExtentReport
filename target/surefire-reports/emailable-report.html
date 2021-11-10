@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">Surefire suite</th></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">2,307</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">testrunner.TestRunner</td><td><a href="#m0">null</a></td><td rowspan="1">1636523298941</td><td rowspan="1">1</td></tr></tbody>
+</table>
+<h2>Surefire test</h2><h3 id="m0">testrunner.TestRunner#null</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NoClassDefFoundError: rst/pdfbox/layout/text/TextFragment
+	at tech.grasshopper.pdf.chapter.detailed.StepOrHookRow.generateName(StepOrHookRow.java:80)
+	at tech.grasshopper.pdf.chapter.detailed.StepRow.generateTextOutput(StepRow.java:25)
+	at tech.grasshopper.pdf.chapter.detailed.StepOrHookRow.generateRow(StepOrHookRow.java:45)
+	at tech.grasshopper.pdf.chapter.detailed.DetailedRowComponent.display(DetailedRowComponent.java:83)
+	at tech.grasshopper.pdf.chapter.detailed.DetailedPage.lambda$0(DetailedPage.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at tech.grasshopper.pdf.chapter.detailed.DetailedPage.createPage(DetailedPage.java:39)
+	at tech.grasshopper.pdf.chapter.detailed.DetailedChapter.sendToPage(DetailedChapter.java:115)
+	at tech.grasshopper.pdf.chapter.detailed.DetailedChapter.createAndSendPageData(DetailedChapter.java:104)
+	at tech.grasshopper.pdf.chapter.detailed.DetailedChapter.createChapter(DetailedChapter.java:28)
+	at tech.grasshopper.pdf.PDFCucumberReport.lambda$0(PDFCucumberReport.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at tech.grasshopper.pdf.PDFCucumberReport.createReport(PDFCucumberReport.java:100)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter.flush(ExtentPDFCucumberReporter.java:66)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter.access$1(ExtentPDFCucumberReporter.java:57)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter$1.onNext(ExtentPDFCucumberReporter.java:42)
+	at tech.grasshopper.pdf.extent.ExtentPDFCucumberReporter$1.onNext(ExtentPDFCucumberReporter.java:1)
+	at io.reactivex.rxjava3.subjects.PublishSubject$PublishDisposable.onNext(PublishSubject.java:310)
+	at io.reactivex.rxjava3.subjects.PublishSubject.onNext(PublishSubject.java:226)
+	at com.aventstack.extentreports.ReactiveSubject.onFlush(ReactiveSubject.java:83)
+	at com.aventstack.extentreports.AbstractProcessor.onFlush(AbstractProcessor.java:85)
+	at com.aventstack.extentreports.ExtentReports.flush(ExtentReports.java:284)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.finishReport(ExtentCucumberAdapter.java:296)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter.access$6(ExtentCucumberAdapter.java:295)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:132)
+	at com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter$8.receive(ExtentCucumberAdapter.java:1)
+	at io.cucumber.core.eventbus.AbstractEventPublisher.send(AbstractEventPublisher.java:51)
+	at io.cucumber.core.eventbus.AbstractEventBus.send(AbstractEventBus.java:12)
+	at io.cucumber.core.runtime.CucumberExecutionContext.emitTestRunFinished(CucumberExecutionContext.java:93)
+	at io.cucumber.core.runtime.CucumberExecutionContext.finishTestRun(CucumberExecutionContext.java:74)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:236)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+Caused by: java.lang.ClassNotFoundException: rst.pdfbox.layout.text.TextFragment
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	... 59 more
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>
